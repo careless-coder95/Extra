@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils import executor
-API_TOKEN = "8079354553:AAHAWavfLfwSwOY54-jO2XXCnAGKUrsi72M"
+API_TOKEN = ""
 BOT_OWNER_ID = 8028749711  # 👈 Apna Telegram ID
 # Links
 OWNER_LINK = "https://t.me/CarelessxOwner"
