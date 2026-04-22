@@ -12,8 +12,8 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, ChatJoinRequestHandler, ContextTypes
 
 # ============= BOT CONFIGURATION =============
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"  # Apna bot token yahan paste karein
-BOT_USERNAME = "@YourBotUsername"   # Apna bot username yahan dalein
+BOT_TOKEN = ""  # Apna bot token yahan paste karein
+BOT_USERNAME = ""   # Apna bot username yahan dalein
 
 # ============= DATABASE FILE =============
 DB_FILE = "auto_accept_db.json"
@@ -61,16 +61,19 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_text = f"""
 👋 **Welcome {user.first_name}!**
 
-🤖 Main ek Auto Join Request Accepter Bot hoon.
+🤖 I am an Auto Join Request Acceptor Bot.
 
-✅ **Main kya karta hoon:**
-• Group aur Channel ke join requests automatically accept karta hoon
-• Silently kaam karta hoon, koi spam nahi
+✅ **What I do:**
+• Automatically accept group and channel join requests
+• Work silently, no spam
 
-📌 **Use kaise karein:**
-Niche diye gaye buttons se mujhe apne group ya channel mein add karein.
+🤖 I am an Auto Join Request Acceptor Bot.
 
-💡 Setup help ke liye /help command use karein.
+✅ **What I do:**
+• Automatically accept group and channel join requests
+• Work silently, no spam
+
+💡 Use the /help command for setup help.
 """
     
     await update.message.reply_text(
@@ -86,38 +89,24 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
 📖 **Setup Guide**
 
-**Group mein setup kaise karein:**
+**How to set up in a group:**
 
-1️⃣ Bot ko apne group mein add karein
-2️⃣ Bot ko **Admin** banayein
-3️⃣ **Zaruri Permissions:**
-   ✅ Invite users via link
+1️⃣ Add the bot to your group
+2️⃣ Make the bot an **Admin**
+3️⃣ **Required Permissions:**
+✅ Invite users via link
 
-**Bas itna hi!** Bot automatically join requests accept karne lagega.
+**How to set up a channel:**
 
----
-
-**Channel mein setup kaise karein:**
-
-1️⃣ Bot ko apne channel mein add karein
-2️⃣ Bot ko **Admin** banayein
-3️⃣ **Zaruri Permissions:**
-   ✅ Invite users via link
-
-**Ho gaya!** Bot ab requests accept karega.
-
----
-
-⚠️ **Note:**
-• Bot silently kaam karta hai
-• Koi message post nahi karta
-• Automatically sab requests accept ho jayengi
-• Group/Channel private hona chahiye (join request ke liye)
+1️⃣ Add the bot to your channel
+2️⃣ Make the bot an **Admin**
+3️⃣ **Required Permissions:**
+✅ Invite users via link। 
 
 🔧 **Commands:**
-/start - Bot start karein
-/help - Ye help message
-/stats - Statistics dekhein
+/start - Start the bot
+/help - This help message
+/stats - View statistics
 """
     
     await update.message.reply_text(help_text, parse_mode='Markdown')
