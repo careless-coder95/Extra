@@ -187,7 +187,7 @@ def get_start_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton("⌯ 𝐌ʏ 𝐌ᴧsᴛᴇʀ ⌯", url="https://t.me/carelessxowner"),
         ],
         [
-            InlineKeyboardButton("⌯ 𝐇єʟᴘ 𝐀ηᴅ 𝐂ᴏᴍᴍᴧηᴅ𝐬 ⌯", url=""),
+            InlineKeyboardButton("⌯ 𝐇єʟᴘ 𝐀ηᴅ 𝐂ᴏᴍᴍᴧηᴅ𝐬 ⌯", callback_data="help_menu"),
         ],
     ]
     return InlineKeyboardMarkup(keyboard)
