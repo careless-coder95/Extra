@@ -25,15 +25,15 @@ except ImportError:
 # ⚙️ BOT CONFIGURATION - EDIT THESE VALUES
 # ═══════════════════════════════════════════════════════════════
 
-BOT_TOKEN = os.getenv("BOT_TOKEN", "7925658062:AAH-3XJCxuNrMBPqe2Q3_WCIhRlhR8v0k_s")
-OWNER_ID = os.getenv("OWNER_ID", "7406686308")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+OWNER_ID = os.getenv("OWNER_ID", "")
 OWNER_NAME = os.getenv("OWNER_NAME", "Owner")
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://rizzxxx00:riizzxxx00@cluster0.vg0pm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", "-1003642420485"))
-API_KEY = os.getenv("API_KEY", "STARK-ANSH")
+MONGO_URI = os.getenv("MONGO_URI", "")
+LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", ""))
+API_KEY = os.getenv("API_KEY", "")
 
 # API Configuration
-API_BASE_URL = "https://stark-free-osint-api.vercel.app/info"
+API_BASE_URL = ""
 
 # Bot state
 MAINTENANCE_MODE = False
@@ -662,12 +662,18 @@ async def fetch_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         
                         result_lines = []
                         result_lines.append(f"🔍 <b>Telegram ID:</b> <code>{tg_id}</code>\n")
-                        
-                        for key, value in data.items():
-                            if value and str(value).strip() and str(value) != "None":
-                                formatted_key = key.replace("_", " ").title()
-                                result_lines.append(f"<b>{formatted_key}:</b> {escape_html(str(value))}")
-                        
+                        number = data.get("number")
+                        country_code = data.get("country_code")
+                        country = data.get("country")
+                        if number:
+                            result_lines.append(f"<b>Number:</b> {escape_html(str(number))}")
+                        if country_code:
+                            result_lines.append(f"<b>Country Code:</b> {escape_html(str(country_code))}")
+                        if country:
+                            result_lines.append(f"<b>Country:</b> {escape_html(str(country))}")
+
+
+                            
                         decorated = "\n".join(result_lines)
                         
                         add_to_history(user.id, tg_id, str(data)[:200])
