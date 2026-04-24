@@ -102,13 +102,15 @@ async def num_command(client, message):
     result = format_response(clean)
 
     text = (
+        f"```"
         f"❁═════⟬ ɴᴜᴍʙᴇʀ ɪɴꜰᴏ ⟭═════❁\n"
         f"{DIVIDER}\n"
         f"{result}\n"
         f"{DIVIDER}\n\n"
         f"{OWNER_TAG}"
+        f"```"
     )
-    await message.edit(text)
+    await message.edit(text, parse_mode="Markdown")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -148,14 +150,15 @@ async def tg_command(client, message):
     result = format_response(clean)
 
     text = (
+        f"```"
         f"❁═════⟬ ᴛᴇʟᴇɢʀᴀᴍ ɪɴꜰᴏ ⟭═════❁\n"
         f"{DIVIDER}\n"
         f"{result}\n"
         f"{DIVIDER}\n\n"
         f"{OWNER_TAG}"
+        f"```"
     )
-    await message.edit(text)
-
+    await message.edit(text, parse_mode="Markdown")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
