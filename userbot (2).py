@@ -1,3 +1,4 @@
+from pyrogram import enums
 from pyrogram import Client, filters
 import aiohttp
 
@@ -102,7 +103,7 @@ async def num_command(client, message):
     result = format_response(clean)
 
     text = (
-        f"```"
+        f"```\n"
         f"❁═════⟬ ɴᴜᴍʙᴇʀ ɪɴꜰᴏ ⟭═════❁\n"
         f"{DIVIDER}\n"
         f"{result}\n"
@@ -110,7 +111,7 @@ async def num_command(client, message):
         f"{OWNER_TAG}"
         f"```"
     )
-    await message.edit(text, parse_mode="Markdown")
+    await message.edit(text, parse_mode=enums.ParseMode.MARKDOWN")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -133,7 +134,7 @@ async def tg_command(client, message):
     else:
         args = message.text.split(None, 1)
         if len(args) < 2 or not args[1].strip():
-            await message.edit("**ᴜꜱᴀɢᴇ:** `.tg {userid}` ʏᴀ ᴋɪꜱɪ ᴍᴇꜱꜱᴀɢᴇ ᴋᴏ ʀᴇᴘʟʏ ᴋᴀʀᴋᴇ `.tg`")
+            await message.edit("**ᴜꜱᴀɢᴇ:** `.tg {userid}` ᴏʀ ᴛᴏ ʀᴇᴘʟʏ ᴀɴʏ ᴜsᴇʀ ᴍᴇssᴇɢᴇ `.tg`")
             return
         user_id = args[1].strip()
 
@@ -150,7 +151,7 @@ async def tg_command(client, message):
     result = format_response(clean)
 
     text = (
-        f"```"
+        f"```\n"
         f"❁═════⟬ ᴛᴇʟᴇɢʀᴀᴍ ɪɴꜰᴏ ⟭═════❁\n"
         f"{DIVIDER}\n"
         f"{result}\n"
@@ -158,7 +159,7 @@ async def tg_command(client, message):
         f"{OWNER_TAG}"
         f"```"
     )
-    await message.edit(text, parse_mode="Markdown")
+    await message.edit(text, parse_mode=enums.ParseMode.MARKDOWN)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
