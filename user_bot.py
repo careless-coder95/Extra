@@ -31,9 +31,9 @@ except ImportError as e:
 # ==================== CONFIGURATION ====================
 
 class Config:
-    BOT_TOKEN = "8715561936:AAFYZzdxAgFwN_8eUprjYx8ZGyKQEFQ7NLI"
-    API_ID = 33219790
-    API_HASH = "ec80597289da7dbff8c96c907f2cfe31"
+    BOT_TOKEN = ""
+    API_ID = 00000
+    API_HASH = ""
     
     CMD_PREFIX = "."
     USERS_DB_FILE = "sty_users.json"
